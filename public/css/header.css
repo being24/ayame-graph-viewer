@@ -1,0 +1,72 @@
+.header{
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6));
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header-clip{
+    width: calc(100% - 20px);
+    padding: 0 10px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    scroll-snap-align: start;
+    background-image: url(../img/p0348_l.png);
+    background-size: contain;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 380px 50%, 320px 100%, 0 100%);
+}
+
+.header-clip .title-area{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.header-clip .logo{
+    height: 80px;
+    width: 80px;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    border-radius: 200px;
+    background-image: url(../img/scp-logo.svg);
+    background-size: contain;
+    filter: invert(88%) sepia(61%) saturate(0%) hue-rotate(229deg) brightness(107%) contrast(101%);
+}
+
+.header-clip .title{
+    user-select: none;
+    margin-left: 5px;
+}
+
+.header-clip h1{
+    width: 100%;
+    color: #FFF;
+    margin-top: 11px;
+    height: 34px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 28px;
+}
+
+.header-clip p{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    color: #FFF;
+}
+
+.list_title{
+    height: 30px;
+    padding: 2px 0;
+    font-size: 26px;
+    font-weight: bold;
+    color: #484848;
+    text-shadow: 0px -2px 0 rgb(134 134 134 / 50%);
+    text-align: center;
+    user-select: none;
+}

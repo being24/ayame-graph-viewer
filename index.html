@@ -4,61 +4,107 @@
         <meta charset="utf-8">
         <title>SoreCorePoi</title>
 
-        <link type="text/css" rel="stylesheet" href="css/header.css">
-        <link type="text/css" rel="stylesheet" href="css/contents.css">
-        <link type="text/css" rel="stylesheet" href="css/search.css">
-        <link type="text/css" rel="stylesheet" href="css/footer.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/header.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/contents.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/search.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/footer.css">
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
     </head>
 
     <body>
         <div class="header">
-            <div class="title">
-                <div class="logo"></div>
-                <h1>SCP DataBase</h1>
-                <p>Secure. Contain. Protect</p>
+            <div class="header-clip">
+                <div class="title-area">
+                    <div class="logo"></div>
+                    <div class="title">
+                        <h1>SCP DataBase</h1>
+                        <p>Secure. Contain. Protect</p>
+                    </div>
+                </div>
+
+                <div class="opton-area">
+
+                </div>
             </div>
         </div>
 
         <div class="main">
-            <div id="search_area">
-                <div id="search_mode">
-                    <input id="fullname_mode" class="search_box" type=search placeholder="fullname"> 
-                    <input id="metatitle_mode" class="search_box display_none" type=search placeholder="metatitle">
-                    <div id="mode_change"></div>
-                    <div id="search_btn"></div>
+            <div id="contents">
+                <div id="search_contents">
+                    <h2>Database access</h2>
+                    <form action="" id="search_area">
+                        <div class="form-element">
+                            <div class="form-element-title">Title</div>
+                            <div class="form-element-input">
+                                <input type="text" name="title" placeholder="title" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>   
+                        </div>
+                        <div class="form-element"></div>
+                        <div class="form-element">
+                            <div class="form-element-title">Tag</div>
+                            <div class="form-element-input">
+                                <input type="text" name="tag" placeholder="tag" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>   
+                        </div>
+                        <div class="form-element"></div>
+                        <div class="form-element">
+                            <div class="form-element-title">Author</div>
+                            <div class="form-element-input">
+                                <input type="text" name="author" placeholder="author" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>   
+                        </div>
+                        <div class="form-element"></div>
+                        <div class="form-element">
+                            <div class="form-element-title">Rate</div>
+                            <div class="form-element-input">
+                                <input type="text" name="rate-min" placeholder="min" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>  
+                        </div>
+                        <div class="form-element">
+                            <div class="form-element-title"></div>
+                            <div class="form-element-input">
+                                <input type="text" name="rate-max" placeholder="max" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>  
+                        </div>
+                        <div class="form-element"></div>
+                        <div class="form-element">
+                            <div class="form-element-title">Date</div>
+                            <div class="form-element-input">
+                                <input type="text" name="date-min" placeholder="min" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>  
+                        </div>
+                        <div class="form-element">
+                            <div class="form-element-title"></div>
+                            <div class="form-element-input">
+                                <input type="text" name="date-max" placeholder="max" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>  
+                        </div>
+                        <div class="form-control">
+                            <div class="form-btn">Clear</div>
+                            <div class="form-btn">Search</div>
+                        </div>
+                    </form>
                 </div>
-                <div id="attention" class="attention display_off"><p>Accessed data is recorded by the Foundation along with the access user information.</p></div>
-            </div>
-            <div id="contents_area">   
-                <div id="most" class="data_contents">
-                    <div class="list_title">Most Accessed</div>
-                    <div id="most_list" class="data_list">
 
-                    </div>
-                </div>
-                <div id="new" class="data_contents">
-                    <div class="list_title">New Data</div>
-                    <div id="new_list" class="data_list">
-
-                    </div>
-                </div>
-                
+                <div class="contents-border top-left-border"></div>
+                <div class="contents-border top-right-border"></div>
+                <div class="contents-border bottom-left-border"></div>
+                <div class="contents-border bottom-right-border"></div>
             </div>
         </div>
 
         <div id="footer">
-            <div id="temp_item" class="footer_item"></div>
-            <div id="license" class="footer_item">CC BY-SA 3.0</div>
-            <div id="information" class="footer_item">Contact
-                <div id="info_github"></div>
-                <div id="info_discode"></div>
-                <div id="info_form"></div>
-            </div>
+            
         </div>
         
     </body>
-    <script src="js/serch.js"></script>
-
+    <script src="./public/js/serch.js"></script>
 </html>
