@@ -19,9 +19,9 @@
 }
 
 .picker-cancel:hover{
-    color: rgb(70, 70, 70);
+    background: rgb(40 40 40 / 70%);
 }
 
 .picker-confirm:hover{
-    color: rgb(70, 70, 70);
+    background: rgb(40 40 40 / 70%);
 }
