@@ -4,13 +4,13 @@
         <meta charset="utf-8">
         <title>SoreCorePoi</title>
 
+        <script src="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.css">
+
         <link type="text/css" rel="stylesheet" href="./public/css/header.css">
         <link type="text/css" rel="stylesheet" href="./public/css/contents.css">
         <link type="text/css" rel="stylesheet" href="./public/css/search.css">
         <link type="text/css" rel="stylesheet" href="./public/css/footer.css">
-
-        <script src="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pickerjs@1.2.1/dist/picker.min.css">
         
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
     </head>
@@ -79,14 +79,14 @@
                         <div class="form-element">
                             <div class="form-element-title">Date</div>
                             <div class="form-element-input">
-                                <input type="text" name="date-min" class="form-control js-full-picker" placeholder="from" class="form-input">
+                                <input type="text" name="date-min" class="form-control picker-from" placeholder="from" class="form-input">
                                 <div class="input_underline"></div>
                             </div>  
                         </div>
                         <div class="form-element">
                             <div class="form-element-title"></div>
                             <div class="form-element-input">
-                                <input type="text" name="date-max" class="form-control js-full-picker" placeholder="to" class="form-input">
+                                <input type="text" name="date-max" class="form-control picker-to" placeholder="to" class="form-input">
                                 <div class="input_underline"></div>
                             </div>  
                         </div>
