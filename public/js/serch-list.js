@@ -122,6 +122,13 @@ function searchGet(){
     searchListClear()
     const form = document.getElementById("search_area");
     const fd = new FormData(form)
+
+    const separatorString = /\s+/;
+    const _tags = fd.get("tag").split(separatorString)
+    let send_tags = ""
+    for(const tag of _tags){
+        send_tags += "&tag=" + tag
+    }
     
     fd.append("show", params.get("show"))
     fd.append("page", params.get("page"))
@@ -132,7 +139,7 @@ function searchGet(){
                     + "?page=" + fd.get("page")
                     + "&show=" + fd.get("show")
                     + (fd.get("search").length ? "&title=" + fd.get("search") : "")
-                    + (fd.get("tag").length ? "&tag=" + fd.get("tag") : "")
+                    + (send_tags.length ? send_tags : "")
                     + (fd.get("author").length ? "&author=" + fd.get("author") : "")
                     + (fd.get("rate-min").length ? "&rate_min=" + fd.get("rate-min") : "")
                     + (fd.get("rate-max").length ? "&rate_max=" + fd.get("rate-max") : "")
