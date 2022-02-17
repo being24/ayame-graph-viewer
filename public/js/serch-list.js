@@ -127,7 +127,7 @@ function searchGet(){
     const _tags = fd.get("tag").split(separatorString)
     let send_tags = ""
     for(const tag of _tags){
-        send_tags += "&tag=" + tag
+        send_tags += "&tags=" + tag
     }
     
     fd.append("show", params.get("show"))
