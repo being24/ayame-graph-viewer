@@ -62,7 +62,7 @@ function searchListDraw(list){
         document.getElementById("search-list-next").classList.remove("search-list-control-btn-lock")
         document.getElementById("search-list-next").classList.add("center-eff-btn")
         document.getElementById("search-list-next").onclick = function(){
-            location.href = "/search.html?page=" + (Number(params.get("page")) + 1) 
+            location.href = "./search.html?page=" + (Number(params.get("page")) + 1) 
                           + "&show=" + params.get("show")
                           + (params.get("title") ? "&title=" + params.get("title") : "")
                           + (params.get("tag") ? "&tag=" + params.get("tag") : "")
@@ -83,7 +83,7 @@ function searchListDraw(list){
         document.getElementById("search-list-prev").classList.remove("search-list-control-btn-lock")
         document.getElementById("search-list-prev").classList.add("center-eff-btn")
         document.getElementById("search-list-prev").onclick = function(){
-            location.href = "/search.html?page=" + (Number(params.get("page")) - 1) 
+            location.href = "./search.html?page=" + (Number(params.get("page")) - 1) 
                           + "&show=" + params.get("show")
                           + (params.get("title") ? "&title=" + params.get("title") : "")
                           + (params.get("tag") ? "&tag=" + params.get("tag") : "")
