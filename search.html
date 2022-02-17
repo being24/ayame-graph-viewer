@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SoreCorePoi</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+
+        <link type="text/css" rel="stylesheet" href="./public/css/header.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/contents.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/input.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/search.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/footer.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/search-list.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/rate-circle.css">
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="back-grid"></div>
+        <div class="header">
+            <div class="header-clip">
+                <div id="title-root-a" class="title-area">
+                    <div class="logo"></div>
+                    <div class="title">
+                        <h1>SCP DataBase</h1>
+                        <p>Secure. Contain. Protect</p>
+                    </div>
+                </div>
+
+                <div class="opton-area">
+
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="side">
+                <div id="contents" class="serch-box">
+                    <div id="search_contents">
+                        <h2>Database access</h2>
+                        <form action="" id="search_area">
+                            <div class="main-search">
+                                <div class="form-element">
+                                    <div class="form-element-input">
+                                        <div class="input-image-area">
+                                            <div class="input-image input-image-search"></div>
+                                        </div>
+                                        <input type="text" name="search" placeholder="fullname or metatitle" autocomplete="off" class="form-input">
+                                        <div class="input_underline"></div>
+                                    </div>   
+                                </div>
+                            </div>
+                            <div id="expansion-search" class="sub-search">
+                                <h3>Advanced</h3>
+                                <div class="form-element">
+                                    <div class="form-element-title">Tag</div>
+                                    <div class="form-element-input">
+                                        <div class="input-image-area">
+                                            <div class="input-image input-image-tag"></div>
+                                        </div>
+                                        <input type="text" name="tag" placeholder="tag" class="form-input">
+                                        <div class="input_underline"></div>
+                                    </div>   
+                                </div>
+                                <div class="form-element">
+                                    <div class="form-element-title">Author</div>
+                                    <div class="form-element-input">
+                                        <div class="input-image-area">
+                                            <div class="input-image input-image-author"></div>
+                                        </div>
+                                        <input type="text" name="author" placeholder="author" class="form-input">
+                                        <div class="input_underline"></div>
+                                    </div>   
+                                </div>
+                                <h3>Filter</h3>
+                                <div class="form-element">
+                                    <div class="form-element-title">Rate</div>
+                                    <div class="form-element-input">
+                                        <div class="input-image-area">
+                                            <div class="input-image input-image-rate"></div>
+                                        </div>
+                                        <div class="form-input form-input-flex">
+                                            <input type="number" id="input-range-min" name="rate-min" class="input-range" value="0" min="0" max="2000">
+                                            <multi-range></multi-range>
+                                            <div class="input-range-wight-min">to</div>
+                                            <input type="number" id="input-range-max" name="rate-max" class="input-range" value="2000" min="0" max="2000">
+                                        </div>
+                                        
+                                    </div>  
+                                </div>
+                                <div class="form-element">
+                                    <div class="form-element-title">Date</div>
+                                    <div class="form-element-input">
+                                        <div class="input-image-area">
+                                            <div class="input-image input-image-calendar"></div>
+                                        </div>
+                                        <input type="text" id="flatpickr" name="date" class="form-input">
+                                        <div class="input_underline"></div>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="form-control">
+                                <div id="expansion-search-btn" class="sub-search-btn center-eff-btn">
+                                    <div id="expansion-search-btn-title" class="sub-search-btn-img" title="Expansion"></div>
+                                </div>
+                                <div id="search-btn" class="search-btn center-eff-btn">Search</div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="contents-border top-left-border"></div>
+                    <div class="contents-border top-right-border"></div>
+                    <div class="contents-border bottom-left-border"></div>
+                    <div class="contents-border bottom-right-border"></div>
+                </div>
+            </div>
+            <div class="main">
+                <div id="search-list-area">
+                    <div id="search-list"></div>
+                </div>
+                <div id="search-list-control" class="search-list-control-hidden">
+                    <div id="search-list-prev" class="search-list-control-btn center-eff-btn">prev</div>
+                    <div id="search-list-next" class="search-list-control-btn center-eff-btn">next</div>
+                </div>
+                <template id="template-contents">
+                    <div class="search-element">
+                        <div class="search-element-title"></div>
+                        <div class="search-element-metatitle"></div>
+                        <div class="search-element-flex">
+                            <div class="search-element-rate">
+                                <div class="rate-circle"></div>
+                                <div class="rate-circle-animation"></div>
+                            </div>
+                            <div class="search-element-info">
+                                <div class="search-element-tag-area">
+                                    <div class="search-element-tag-img search-element-img"></div>
+                                    <div class="search-element-tags"></div>
+                                </div>
+                                <div class="search-element-author-area">
+                                    <div class="search-element-author-img search-element-img"></div>
+                                    <a class="search-element-author"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-element-created-date"></div>
+                        <div class="contents-border top-left-border"></div>
+                        <div class="contents-border top-right-border"></div>
+                        <div class="contents-border bottom-left-border"></div>
+                        <div class="contents-border bottom-right-border"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div id="footer">
+            
+        </div>
+        
+    </body>
+    <script src="./public/js/header.js"></script>
+    <script src="./public/js/serch.js"></script>
+    <script src="./public/js/serch-list.js"></script>
+    <script src="./public/js/multi-range.js"></script>
+    <script src="./public/js/flatpickr.js"></script>
+</html>

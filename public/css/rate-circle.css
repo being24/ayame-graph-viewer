@@ -1,0 +1,350 @@
+.rate-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100px;
+    height: 85px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: relative;
+    padding-top: 15px;
+    transition: all 4.5s ease-out;
+}
+
+.rate-circle-animation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100px;
+    height: 85px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    padding-top: 15px;
+    background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 100%, #44474a 100% 100%);
+    animation-duration: 2s;
+    animation-name: rate-circle-animation;
+}
+
+.rate-circle-animation::before{
+    content: "Rate";
+    position: absolute;
+    top: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8aa7bf;
+}
+
+
+@keyframes rate-circle-animation{
+    0%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 0%, #44474a 0% 100%);
+    }
+    1%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 1%, #44474a 1% 100%);
+    }
+    2%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 2%, #44474a 2% 100%);
+    }
+    3%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 3%, #44474a 3% 100%);
+    }
+    4%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 4%, #44474a 4% 100%);
+    }
+    5%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 5%, #44474a 5% 100%);
+    }
+    6%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 6%, #44474a 6% 100%);
+    }
+    7%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 7%, #44474a 7% 100%);
+    }
+    8%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 8%, #44474a 8% 100%);
+    }
+    9%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 9%, #44474a 9% 100%);
+    }
+    10%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 10%, #44474a 10% 100%);
+    }
+    11%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 11%, #44474a 11% 100%);
+    }
+    12%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 12%, #44474a 12% 100%);
+    }
+    13%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 13%, #44474a 13% 100%);
+    }
+    14%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 14%, #44474a 14% 100%);
+    }
+    15%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 15%, #44474a 15% 100%);
+    }
+    16%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 16%, #44474a 16% 100%);
+    }
+    17%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 17%, #44474a 17% 100%);
+    }
+    18%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 18%, #44474a 18% 100%);
+    }
+    19%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 19%, #44474a 19% 100%);
+    }
+    20%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 20%, #44474a 20% 100%);
+    }
+    21%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 21%, #44474a 21% 100%);
+    }
+    22%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 22%, #44474a 22% 100%);
+    }
+    23%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 23%, #44474a 23% 100%);
+    }
+    24%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 24%, #44474a 24% 100%);
+    }
+    25%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 25%, #44474a 25% 100%);
+    }
+    26%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 26%, #44474a 26% 100%);
+    }
+    27%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 27%, #44474a 27% 100%);
+    }
+    28%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 28%, #44474a 28% 100%);
+    }
+    29%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 29%, #44474a 29% 100%);
+    }
+    30%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 30%, #44474a 30% 100%);
+    }
+    31%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 31%, #44474a 31% 100%);
+    }
+    32%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 32%, #44474a 32% 100%);
+    }
+    33%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 33%, #44474a 33% 100%);
+    }
+    34%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 34%, #44474a 34% 100%);
+    }
+    35%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 35%, #44474a 35% 100%);
+    }
+    36%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 36%, #44474a 36% 100%);
+    }
+    37%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 37%, #44474a 37% 100%);
+    }
+    38%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 38%, #44474a 38% 100%);
+    }
+    39%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 39%, #44474a 39% 100%);
+    }
+    40%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 40%, #44474a 40% 100%);
+    }
+    41%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 41%, #44474a 41% 100%);
+    }
+    42%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 42%, #44474a 42% 100%);
+    }
+    43%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 43%, #44474a 43% 100%);
+    }
+    44%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 44%, #44474a 44% 100%);
+    }
+    45%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 45%, #44474a 45% 100%);
+    }
+    46%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 46%, #44474a 46% 100%);
+    }
+    47%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 47%, #44474a 47% 100%);
+    }
+    48%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 48%, #44474a 48% 100%);
+    }
+    49%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 49%, #44474a 49% 100%);
+    }
+    50%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 50%, #44474a 50% 100%);
+    }
+    51%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 51%, #44474a 51% 100%);
+    }
+    52%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 52%, #44474a 52% 100%);
+    }
+    53%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 53%, #44474a 53% 100%);
+    }
+    54%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 54%, #44474a 54% 100%);
+    }
+    55%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 55%, #44474a 55% 100%);
+    }
+    56%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 56%, #44474a 56% 100%);
+    }
+    57%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 57%, #44474a 57% 100%);
+    }
+    58%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 58%, #44474a 58% 100%);
+    }
+    59%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 59%, #44474a 59% 100%);
+    }
+    60%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 60%, #44474a 60% 100%);
+    }
+    61%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 61%, #44474a 61% 100%);
+    }
+    62%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 62%, #44474a 62% 100%);
+    }
+    63%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 63%, #44474a 63% 100%);
+    }
+    64%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 64%, #44474a 64% 100%);
+    }
+    65%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 65%, #44474a 65% 100%);
+    }
+    66%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 66%, #44474a 66% 100%);
+    }
+    67%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 67%, #44474a 67% 100%);
+    }
+    68%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 68%, #44474a 68% 100%);
+    }
+    69%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 69%, #44474a 69% 100%);
+    }
+    70%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 70%, #44474a 70% 100%);
+    }
+    71%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 71%, #44474a 71% 100%);
+    }
+    72%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 72%, #44474a 72% 100%);
+    }
+    73%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 73%, #44474a 73% 100%);
+    }
+    74%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 74%, #44474a 74% 100%);
+    }
+    75%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 75%, #44474a 75% 100%);
+    }
+    76%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 76%, #44474a 76% 100%);
+    }
+    77%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 77%, #44474a 77% 100%);
+    }
+    78%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 78%, #44474a 78% 100%);
+    }
+    79%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 79%, #44474a 79% 100%);
+    }
+    80%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 80%, #44474a 80% 100%);
+    }
+    81%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 81%, #44474a 81% 100%);
+    }
+    82%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 82%, #44474a 82% 100%);
+    }
+    83%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 83%, #44474a 83% 100%);
+    }
+    84%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 84%, #44474a 84% 100%);
+    }
+    85%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 85%, #44474a 85% 100%);
+    }
+    86%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 86%, #44474a 86% 100%);
+    }
+    87%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 87%, #44474a 87% 100%);
+    }
+    88%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 88%, #44474a 88% 100%);
+    }
+    89%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 89%, #44474a 89% 100%);
+    }
+    90%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 90%, #44474a 90% 100%);
+    }
+    91%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 91%, #44474a 91% 100%);
+    }
+    92%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 92%, #44474a 92% 100%);
+    }
+    93%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 93%, #44474a 93% 100%);
+    }
+    94%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 94%, #44474a 94% 100%);
+    }
+    95%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 95%, #44474a 95% 100%);
+    }
+    96%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 96%, #44474a 96% 100%);
+    }
+    97%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 97%, #44474a 97% 100%);
+    }
+    98%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 98%, #44474a 98% 100%);
+    }
+    99%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 99%, #44474a 99% 100%);
+    }
+    100%{
+        background-image: radial-gradient(#101519 60%, transparent 61%), conic-gradient(#00000000 0% 100%, #44474a 100% 100%);
+    }
+}

@@ -1,10 +1,5 @@
 .header{
     filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6));
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
 }
 
 .header-clip{
@@ -16,7 +11,21 @@
     justify-content: space-between;
     align-items: center;
     scroll-snap-align: start;
-    background-image: url(../img/p0348_l.png);
+    /*background-image: url(../img/p0348_l.png);
+    filter: brightness(150%);*/
+    background-image: linear-gradient(
+        85deg,
+        hsl(0deg 0% 1%) 0%,
+        hsl(209deg 23% 3%) 22%,
+        hsl(207deg 27% 4%) 33%,
+        hsl(206deg 27% 6%) 42%,
+        hsl(206deg 26% 7%) 50%,
+        hsl(206deg 25% 8%) 58%,
+        hsl(206deg 26% 9%) 67%,
+        hsl(207deg 28% 10%) 78%,
+        hsl(206deg 30% 11%) 100%
+    );
+    
     background-size: contain;
     clip-path: polygon(0 0, 100% 0, 100% 50%, 380px 50%, 320px 100%, 0 100%);
 }
@@ -24,7 +33,7 @@
 .header-clip .title-area{
     display: flex;
     flex-wrap: wrap;
-    
+    cursor: pointer;
 }
 
 .header-clip .logo{

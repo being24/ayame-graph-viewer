@@ -3,66 +3,47 @@ html,body{
     padding: 0;
 }
 
-html{
-    overflow: hidden;
+html,body{
+    scroll-behavior: smooth;
 }
 
 body{
-    background: #2b2b2b;
-    /*background-image: url(../img/back_eff.png);*/
-    background-image: url(../img/black0089.png);
-    background-size: 200px auto;
-    overflow-y: scroll;
-    height: 100vh;
-    /*scroll-snap-type: y mandatory;*/
-
+    background: #222a34;
     -ms-overflow-style: none;
     scrollbar-width: none;
-
-    background-repeat: no-repeat;
-    background-size: cover;
 }
-
-/*
-body:before{
-    content: '';
-    background: inherit;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    position: absolute;
-
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-}
-*/
 
 body::-webkit-scrollbar {
     display:none;
 }
 
+.back-grid{
+    background-image: url(../img/grid.png);
+    filter: invert(30%) sepia(0%) saturate(11%) hue-rotate(143deg) brightness(101%) contrast(93%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc((var(--bg_h, 100vh)) + 150px);
+    z-index: -1;
+}
+
 .main{
     width: 100%;
-    padding-top: 100px;
-    min-height: calc(100% - 150px);
+    min-height: calc(100vh - 100px);
+    min-height: calc((var(--vh, 1vh) * 100) - 100px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
 
-#contents{
-    max-width: calc(1200px - 60px);
-    width: calc(90% - 60px);
-    min-height: 500px;
-    margin: 10px 0;
+.serch-box,.search-element{
+    max-width: 800px;
+    width: calc(100% - 80px);
+    margin: 20px 10px;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.7);
+    background: #101519;
     box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.8);
     position: relative;
     color: #FFF;
@@ -75,29 +56,29 @@ body::-webkit-scrollbar {
 }
 
 .top-left-border{
-    border-top: solid 4px #FFF;
-    border-left: solid 4px #FFF; 
+    border-top: solid 4px #207578;
+    border-left: solid 4px #207578; 
     top: 0;
     left: 0;
 }
 
 .top-right-border{
-    border-top: solid 4px #FFF;
-    border-right: solid 4px #FFF;
+    border-top: solid 4px #207578;
+    border-right: solid 4px #207578;
     top: 0;
     right: 0;
 }
 
 .bottom-left-border{
-    border-bottom: solid 4px #FFF;
-    border-left: solid 4px #FFF;
+    border-bottom: solid 4px #207578;
+    border-left: solid 4px #207578;
     bottom: 0;
     left: 0;
 }
 
 .bottom-right-border{
-    border-bottom: solid 4px #FFF;
-    border-right: solid 4px #FFF;
+    border-bottom: solid 4px #207578;
+    border-right: solid 4px #207578;
     bottom: 0;
     right: 0;
 }
