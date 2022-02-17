@@ -16,7 +16,7 @@ function searchListDraw(list){
         const search_element = clone.querySelector(".search-element")
         search_element.style.animationDuration = (0.5 + (index * 0.2)) < 2.5? 0.5 + (index * 0.2) + "s" : "2.5s"
         search_element.onclick = function(){
-            location.href = "/chart.html?id=" + element.id
+            location.href = "./chart.html?id=" + element.id
         } 
 
         const search_rate_circle = clone.querySelector(".rate-circle")
@@ -35,13 +35,13 @@ function searchListDraw(list){
 
         const search_tag = clone.querySelector(".search-element-tags")
         element.tags = element.tags.map(function(element_tag) {
-            return "<a href='/search.html?page=1&show=10&&tag=" + element_tag + "&rate_min=0&rate_max=2000'>" + element_tag + "</a>";
+            return "<a href='./search.html?page=1&show=10&&tag=" + element_tag + "&rate_min=0&rate_max=2000'>" + element_tag + "</a>";
         })
         search_tag.innerHTML = element.tags.join(" , ")
 
         const search_author = clone.querySelector(".search-element-author")
         search_author.textContent = element.created_by_unix
-        search_author.href = "/search.html?page=1&show=10&author=" + element.created_by_unix + "&rate_min=0&rate_max=2000"
+        search_author.href = "./search.html?page=1&show=10&author=" + element.created_by_unix + "&rate_min=0&rate_max=2000"
 
         const search_created_date = clone.querySelector(".search-element-created-date")
         search_created_date.textContent = element.created_at

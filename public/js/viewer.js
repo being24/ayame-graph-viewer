@@ -112,13 +112,13 @@ function infoDraw(info=false){
 
         const info_tag = document.getElementById("info-tags")
         info.tags = info.tags.map(function(info_tag) {
-            return "<a href='/search.html?page=1&show=10&&tag=" + info_tag + "&rate_min=0&rate_max=2000'>" + info_tag + "</a>";
+            return "<a href='./search.html?page=1&show=10&&tag=" + info_tag + "&rate_min=0&rate_max=2000'>" + info_tag + "</a>";
         })
         info_tag.innerHTML = info.tags.join(" , ")
 
         const info_author = document.getElementById("info-author")
         info_author.textContent = info.created_by_unix
-        info_author.href = "/search.html?page=1&show=10&author=" + info.created_by_unix + "&rate_min=0&rate_max=2000"
+        info_author.href = "./search.html?page=1&show=10&author=" + info.created_by_unix + "&rate_min=0&rate_max=2000"
         
         setTimeout(function(){
             idRateGet()

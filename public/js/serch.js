@@ -7,7 +7,7 @@ function search_api(){
 
     const fd_date = fd.get("date").length ? fd.get("date").split(" to "): []
 
-    const req_url = "/search.html" 
+    const req_url = "./search.html" 
                     + "?page=" + fd.get("page")
                     + "&show=" + fd.get("show")
                     + (fd.get("search").length ? "&title=" + fd.get("search") : "")

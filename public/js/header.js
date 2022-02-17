@@ -1,5 +1,5 @@
 document.getElementById("title-root-a").addEventListener("click", function(){
-    window.location.href = "/"
+    window.location.href = "./"
 }, false)
 
 
