@@ -37,7 +37,7 @@ document.getElementById("expansion-search-btn").addEventListener("click", sub_se
 const mr = document.querySelector("multi-range")
 const mr_min = document.getElementById("input-range-min")
 const mr_max = document.getElementById("input-range-max")
-mr.addEventListener('change', () => {
+mr.addEventListener("change", function(){
     mr_min.value = mr.from
     mr_max.value = mr.to
 })
@@ -53,3 +53,11 @@ function mr_min_max_draw(){
 }
 mr_min.addEventListener('input', mr_min_max_draw)
 mr_max.addEventListener('input', mr_min_max_draw)
+
+
+document.getElementById("search_area").addEventListener("keydown", function(e){
+    const key = e.key
+    if(key == "Enter"){
+        search_api()
+    }
+})

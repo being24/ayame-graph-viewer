@@ -83,12 +83,21 @@ async function chartDraw(date_from=false,date_to=false){
                 x: {
                     ticks : {
                         color: '#869ab3'
+                    },
+                    grid:{
+                        color: '#303943',
+                        borderDash:[1,1]
                     }
                 },
                 y: {
                     ticks : {
                         color: '#869ab3'
+                    },
+                    grid:{
+                        color: '#303943',
+                        borderDash:[1,1]
                     }
+                    
                 }
             }
         }
@@ -119,6 +128,8 @@ function infoDraw(info=false){
         const info_author = document.getElementById("info-author")
         info_author.textContent = info.created_by_unix
         info_author.href = "./search.html?page=1&show=10&author=" + info.created_by_unix + "&rate_min=0&rate_max=2000"
+
+        linkInit(info.fullname,info.created_by_unix)
         
         setTimeout(function(){
             idRateGet()
@@ -143,7 +154,7 @@ function idRateGet(){
             chartDraw()
         }
         else{
-            chartDraw()
+            document.getElementById("chart-info-msg").textContent = "Failed to retrieve data"
         }
     }
     xhr.send()
@@ -155,17 +166,23 @@ function idDataGet(){
     const xhr = new XMLHttpRequest()
 
     xhr.open('GET', req_url, true)
-    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.setRequestHeader('content-type', 'application/json')
     xhr.onload = function () {
         if(xhr.status == 200){
             ResponseData = JSON.parse(xhr.response)
             infoDraw(ResponseData)
+            document.getElementById("chart-info-msg").textContent = ""
         }
         else{
-            infoDraw()
+            document.getElementById("chart-info-msg").textContent = "Failed to retrieve data"
         }
     }
     xhr.send()
+}
+
+function linkInit(link_id,link_author){
+    document.getElementById("info-report-link").href = "http://scp-jp.wikidot.com/" + link_id
+    document.getElementById("info-author-link").href = "http://scp-jp.wikidot.com/author:" + link_author   
 }
 
 function topBtnInit(){
@@ -217,7 +234,20 @@ function topBtnInit(){
     })  
 }
 
+function windowBarInit(){
+    document.getElementById("window-close-btn").addEventListener('click', () => {
+        window.history.back()
+    })
+    document.getElementById("window-min-btn").addEventListener('click', () => {
+        document.exitFullscreen()
+    })
+    document.getElementById("window-max-btn").addEventListener('click', () => {
+        document.getElementsByClassName("column")[0].requestFullscreen()
+    })
+}
+
 window.addEventListener('load', () => {
     idDataGet()
     topBtnInit()
+    windowBarInit()
 })

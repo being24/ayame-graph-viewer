@@ -36,6 +36,11 @@
             </div>
         </div>
         <div class="column">
+            <div class="window-bar">
+                <div id="window-close-btn" class="window-bar-img window-bar-close"></div>
+                <div id="window-min-btn" class="window-bar-img window-bar-min"></div>
+                <div id="window-max-btn" class="window-bar-img window-bar-max"></div>
+            </div>
             <div class="top">
                 <div class="top-title">
                     <div id="info-title" class="top-fullname"></div>
@@ -67,9 +72,17 @@
                         <a id="info-author" class="side-info-text"></a>
                     </div>
                 </div>
+                <div class="side-content">
+                    <div class="side-title">Link</div>
+                    <div class="side-info">
+                        <a id="info-report-link" class="side-info-link" target="_blank" rel="noopener noreferrer"></a>
+                        <a id="info-author-link" class="side-info-link" target="_blank" rel="noopener noreferrer"></a>
+                    </div>
+                </div>
             </div>
             <div class="main">
                 <input type="text" id="flatpickr" name="date" class="from-to-preview">
+                <div id="chart-info-msg" class="chart-info-msg chart-info-msg-on">Loading...</div>
                 <canvas id="rateChart"></canvas>
             </div>
             <div class="contents-border top-left-border"></div>

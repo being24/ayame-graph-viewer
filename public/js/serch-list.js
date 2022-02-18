@@ -1,5 +1,22 @@
 const params = (new URL(document.location)).searchParams
 
+function searchMessage(status) {
+    document.getElementById("search-list-msg-area").classList.add("search-list-msg-area-on")
+
+    if(status == 0){
+        document.getElementById("search-list-msg").textContent = "No results found"
+    }
+    else if(status == 1){
+        document.getElementById("search-list-msg").textContent = "No display results"
+    }
+    else if(status == 2){
+        document.getElementById("search-list-msg").textContent = "Request error"
+    }
+    else{
+        document.getElementById("search-list-msg").textContent = "Unknown error"
+    }
+}
+
 function searchListClear(){
     document.getElementById("search-list").remove()
     document.getElementById("search-list-control").classList.add("search-list-control-hidden")
@@ -95,7 +112,14 @@ function searchListDraw(list){
         }
     }
     
-    
+    if(list.length == 0){
+        if(params.get("page") == "1"){
+            searchMessage(0)
+        }
+        else{
+            searchMessage(1)
+        }
+    }
 }
 
 function searchBoxInit(){
@@ -156,7 +180,7 @@ function searchGet(){
             searchListDraw(ResponseData)
         }
         else{
-            searchListDraw([])
+            searchMessage(2)
         }
     }
     xhr.send()

@@ -5,6 +5,7 @@ html,body{
 
 html,body{
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 body{

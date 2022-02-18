@@ -6,7 +6,7 @@ html{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 20px);
     max-width: 1600px;
     margin: 20px auto;
     position: relative;
@@ -17,11 +17,12 @@ html{
 }
 
 .main{
-    width: calc(100% - 250px);
+    width: calc(100% - 270px);
     position: relative;
     background: #1015196b;
-    min-height: calc(100vh - 220px);
-    min-height: calc((var(--vh, 1vh) * 100) - 220px);
+    min-height: calc(100vh - 240px);
+    min-height: calc((var(--vh, 1vh) * 100) - 240px);
+    padding: 0 10px;
 }
 
 .side{
@@ -29,16 +30,63 @@ html{
     background: #101519;
 }
 
+.window-bar{
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 120px;
+    height: 20px;
+    display: flex;
+}
+
+.window-bar-img{
+    width: 18px;
+    height: 18px;
+    margin-right: 18px;
+    border-radius: 9px;
+    position: relative;
+    background: #44474a;
+}
+
+.window-bar-img::after{
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.window-bar-img:hover{
+    background: #45a9ad;
+}
+
+.window-bar-close:hover::after{
+    content: "×";
+}
+
+.window-bar-min:hover::after{
+    content: "-";
+}
+
+.window-bar-max:hover::after{
+    content: "+";
+}
+
 .top{
     width: 100%;
-    height: 80px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background: #101519;
+    align-items: center;
 }
 
 .top-title{
-    
+    width: calc(100% - 240px);
+    height: 100px;
 }
 
 .top-control{
@@ -47,6 +95,7 @@ html{
     flex: 0 0 210px;
     align-items: center;
     margin-right: 30px;
+    margin-left: auto;
 }
 
 .top-control-btn{
@@ -79,7 +128,6 @@ html{
 .from-to-preview{
     position: absolute;
     top: 20px;
-    left: 60px;
     background: #00000000;
     color: #869ab3;
     border: 1px solid;
@@ -89,11 +137,14 @@ html{
 }
 
 .top-fullname{
-    margin-top: 15px;
+    margin-top: 36px;
     margin-left: 30px;
     font-size: 1.4em;
     font-weight: bold;
     color: #FFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .top-metatitle{
@@ -141,6 +192,25 @@ html{
     color: #45a9ad;
 }
 
+#info-report-link{
+    background-image: url(../img/report.png);
+}
+
+#info-author-link{
+    background-image: url(../img/author.png);
+}
+
+.side-info-link{
+    width: 35px;
+    height: 35px;
+    margin: 0 10px;
+    background-size: contain;
+    filter: contrast(40%);
+}
+
+.side-info-link:hover{
+    filter: contrast(100%);
+}
 
 .rate-circle-animation{
     height: 100px;
@@ -153,14 +223,38 @@ html{
     content: "";
 }
 
+.chart-info-msg{
+    display: none;
+    position: absolute;
+    color: #45a9ad;
+    font-size: 20px;
+}
+
+.chart-info-msg-on{
+    display: block;
+}
+
 @media screen and (max-width:950px) { 
     .main{
         width: 100%;
+        min-height: 0;
+        padding: 20px 10px;
+        padding-top: 50px;
     }
 
     .side{
         width: 100%;
+        padding-bottom: 10px;
     }
+
+    .top-title{
+        width: 100%;
+    }
+
+    .top-fullname, .top-metatitle{
+        margin-right: 30px;
+    }
+    
 }
 
 @keyframes open-rate-data{
