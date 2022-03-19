@@ -51,11 +51,12 @@ function searchListDraw(list){
         search_metatitle.textContent = element.metatitle
 
         const search_tag = clone.querySelector(".search-element-tags")
-        element.tags = element.tags.map(function(element_tag) {
-            return "<a href='./search.html?page=1&show=10&&tag=" + element_tag + "&rate_min=0&rate_max=2000'>" + element_tag + "</a>";
-        })
-        search_tag.innerHTML = element.tags.join(" , ")
-
+        if(element.tags){
+            element.tags = element.tags.map(function(element_tag) {
+                return "<a href='./search.html?page=1&show=10&&tag=" + element_tag + "&rate_min=0&rate_max=2000'>" + element_tag + "</a>";
+            })
+            search_tag.innerHTML = element.tags.join(" , ")
+        }
         const search_author = clone.querySelector(".search-element-author")
         search_author.textContent = element.created_by_unix
         search_author.href = "./search.html?page=1&show=10&author=" + element.created_by_unix + "&rate_min=0&rate_max=2000"
