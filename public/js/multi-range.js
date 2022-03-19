@@ -63,8 +63,8 @@ customElements.define("multi-range", class extends HTMLElement {
 			</style>
 
 			<div class="container">
-				<input id="back" type="range" min="0" max="2000" value="0" />
-				<input id="front" type="range" min="0" max="2000" value="2000" />
+				<input id="back" type="range" min="-50" max="2000" value="0" />
+				<input id="front" type="range" min="-50" max="2000" value="2000" />
 			</div>
 		`
 		
@@ -90,7 +90,7 @@ customElements.define("multi-range", class extends HTMLElement {
 		const { min, max, from, to } = this
 		const x = (from - min) / (max - min) * 100
 		const y = (to - min) / (max - min) * 100
-
+		console.log(x,y)
 		this._elems.back.style.setProperty("--min", x + "%")
 		this._elems.back.style.setProperty("--max", y + "%")
 	}
