@@ -186,32 +186,54 @@ function linkInit(link_id,link_author){
 }
 
 function topBtnInit(){
-    const month_btn = document.getElementById("from-to-month")
-    const year_btn = document.getElementById("from-to-year")
-    const all_btn = document.getElementById("from-to-all")
+    const month_btn = Array.from(document.getElementsByClassName("from-to-month"))
+    const year_btn = Array.from(document.getElementsByClassName("from-to-year"))
+    const all_btn = Array.from(document.getElementsByClassName("from-to-all"))
 
-    month_btn.addEventListener('click', () => {
-        month_btn.classList.add("top-control-btn-active")
-        year_btn.classList.remove("top-control-btn-active")
-        all_btn.classList.remove("top-control-btn-active")
-
-        const today = new Date()
-        chartDraw(today.setMonth(today.getMonth() - 1), new Date())
+    month_btn.forEach(function(element) {
+        element.addEventListener('click', () => {
+            month_btn.forEach(function(target){
+                target.classList.add("top-control-btn-active")
+            })
+            year_btn.forEach(function(target){
+                target.classList.remove("top-control-btn-active")
+            })
+            all_btn.forEach(function(target){
+                target.classList.remove("top-control-btn-active")
+            })
+            const today = new Date()
+            chartDraw(today.setMonth(today.getMonth() - 1), new Date())
+        })
     })
-    year_btn.addEventListener('click', () => {
-        month_btn.classList.remove("top-control-btn-active")
-        year_btn.classList.add("top-control-btn-active")
-        all_btn.classList.remove("top-control-btn-active")
-
-        const today = new Date()
-        chartDraw(today.setMonth(today.getMonth() - 12), new Date())
+    year_btn.forEach(function(element) {
+        element.addEventListener('click', () => {
+            month_btn.forEach(function(target){
+                target.classList.remove("top-control-btn-active")
+            })
+            year_btn.forEach(function(target){
+                target.classList.add("top-control-btn-active")
+            })
+            all_btn.forEach(function(target){
+                target.classList.remove("top-control-btn-active")
+            })
+            const today = new Date()
+            chartDraw(today.setMonth(today.getMonth() - 12), new Date())
+        })
     })
-    all_btn.addEventListener('click', () => {
-        month_btn.classList.remove("top-control-btn-active")
-        year_btn.classList.remove("top-control-btn-active")
-        all_btn.classList.add("top-control-btn-active")
+    all_btn.forEach(function(element) {
+        element.addEventListener('click', () => {
+            month_btn.forEach(function(target){
+                target.classList.remove("top-control-btn-active")
+            })
+            year_btn.forEach(function(target){
+                target.classList.remove("top-control-btn-active")
+            })
+            all_btn.forEach(function(target){
+                target.classList.add("top-control-btn-active")
+            })
 
-        chartDraw()
+            chartDraw()
+        })
     })
 
     document.getElementById("flatpickr").addEventListener('change', () => {
