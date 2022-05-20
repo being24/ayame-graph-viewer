@@ -90,7 +90,6 @@ customElements.define("multi-range", class extends HTMLElement {
 		const { min, max, from, to } = this
 		const x = (from - min) / (max - min) * 100
 		const y = (to - min) / (max - min) * 100
-		console.log(x,y)
 		this._elems.back.style.setProperty("--min", x + "%")
 		this._elems.back.style.setProperty("--max", y + "%")
 	}
