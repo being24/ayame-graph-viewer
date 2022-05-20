@@ -239,9 +239,15 @@ function topBtnInit(){
     })
 
     document.getElementById("flatpickr").addEventListener('change', () => {
-        month_btn.classList.remove("top-control-btn-active")
-        year_btn.classList.remove("top-control-btn-active")
-        all_btn.classList.remove("top-control-btn-active")
+        month_btn.forEach(function(element) {
+            element.classList.remove("top-control-btn-active")
+        })
+        year_btn.forEach(function(element) {
+            element.classList.remove("top-control-btn-active")
+        })
+        all_btn.forEach(function(element) {
+            element.classList.remove("top-control-btn-active")
+        })
 
         const from_to_input = document.getElementById("flatpickr").value.split(" to ")
         if(from_to_input.length == 2){
