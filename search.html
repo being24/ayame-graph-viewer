@@ -16,6 +16,7 @@
         <link type="text/css" rel="stylesheet" href="./public/css/footer.css">
         <link type="text/css" rel="stylesheet" href="./public/css/search-list.css">
         <link type="text/css" rel="stylesheet" href="./public/css/rate-circle.css">
+        <link type="text/css" rel="stylesheet" href="./public/css/pagination.css">
         
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
     </head>
@@ -119,6 +120,9 @@
                 </div>
             </div>
             <div class="main">
+                <div class="info-search">
+                    <div id="hit-search-num"></div>
+                </div>
                 <div id="search-list-area">
                     <div id="search-list"></div>
                 </div>
@@ -127,8 +131,9 @@
                     <div id="search-list-msg" class="search-list-msg"></div>
                 </div>
                 <div id="search-list-control" class="search-list-control-hidden">
-                    <div id="search-list-prev" class="search-list-control-btn center-eff-btn">prev</div>
-                    <div id="search-list-next" class="search-list-control-btn center-eff-btn">next</div>
+                    <div id="search-list-prev" class="search-list-control-btn center-eff-btn">&lt;</div>
+                    <div id="search-list-num"></div>
+                    <div id="search-list-next" class="search-list-control-btn center-eff-btn">&gt;</div>
                 </div>
                 <template id="template-contents">
                     <div class="search-element">
@@ -170,4 +175,5 @@
     <script src="./public/js/serch-list.js"></script>
     <script src="./public/js/multi-range.js"></script>
     <script src="./public/js/flatpickr.js"></script>
+    <script src="./public/js/pagination.js"></script>
 </html>

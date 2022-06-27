@@ -70,8 +70,31 @@ function searchListDraw(list){
     const bg_h = list.length * 256 + 186 > window.innerHeight? list.length * 256 + 186 : window.innerHeight
     document.documentElement.style.setProperty('--bg_h', bg_h + "px")
 
+    if(list.length == 0){
+        if(params.get("page") == "1"){
+            searchMessage(0)
+        }
+        else{
+            searchMessage(1)
+        }
+    }
+}
+
+function searchNextPrevInit(){
+    if(params.has("hit_num")){
+        searchNextPrevDraw(params.get("hit_num"))
+    }
+    else{
+        searchHitNum()
+    }
+}
+
+function searchNextPrevDraw(hitNum){
+    document.getElementById("hit-search-num").textContent = hitNum + " results"
+
     document.getElementById("search-list-control").classList.remove("search-list-control-hidden")
-    if(list.length != Number(params.get("show"))){
+    const nowShowNum = hitNum - (Number(params.get("show")) * Number(params.get("page")))
+    if(nowShowNum <= 0){
         document.getElementById("search-list-next").classList.add("search-list-control-btn-lock")
         document.getElementById("search-list-next").classList.remove("center-eff-btn")
         document.getElementById("search-list-next").onclick =  ""
@@ -89,6 +112,7 @@ function searchListDraw(list){
                           + (params.get("rate_max") ? "&rate_max=" + params.get("rate_max") : "")
                           + (params.get("date_from")  ? "&date_from=" + params.get("date_from") : "")
                           + (params.get("date_to") ? "&date_to=" + params.get("date_to") : "")
+                          + "&hit_num=" + hitNum
         }
     }
 
@@ -110,17 +134,30 @@ function searchListDraw(list){
                           + (params.get("rate_max") ? "&rate_max=" + params.get("rate_max") : "")
                           + (params.get("date_from")  ? "&date_from=" + params.get("date_from") : "")
                           + (params.get("date_to") ? "&date_to=" + params.get("date_to") : "")
+                          + "&hit_num=" + hitNum
         }
     }
+    paginationInit(Number(params.get("page")),Number(hitNum));
+}
+
+function searchHitNum(){
+    const req_url = "https://ayameapidev.yukkuriikouze.com/search/complex_count" 
+                    + createRequestParameter()
     
-    if(list.length == 0){
-        if(params.get("page") == "1"){
-            searchMessage(0)
+    const xhr = new XMLHttpRequest()
+
+    xhr.open('GET', req_url, true)
+    xhr.setRequestHeader('content-type', 'application/json');
+    xhr.onload = function () {
+        if(xhr.status == 200){
+            history.replaceState(null, document.title, location.href + "&hit_num=" + xhr.response);
+            searchNextPrevDraw(xhr.response)
         }
         else{
-            searchMessage(1)
+            searchMessage(2)
         }
     }
+    xhr.send()
 }
 
 function searchBoxInit(){
@@ -145,32 +182,10 @@ function searchBoxInit(){
 
 function searchGet(){
     searchListClear()
-    const form = document.getElementById("search_area");
-    const fd = new FormData(form)
-
-    const separatorString = /\s+/;
-    const _tags = fd.get("tag").split(separatorString)
-    let send_tags = ""
-    for(const tag of _tags){
-        send_tags += "&tags=" + tag
-    }
-    
-    fd.append("show", params.get("show"))
-    fd.append("page", params.get("page"))
-
-    const fd_date = fd.get("date").length ? fd.get("date").split(" to "): []
 
     const req_url = "https://ayameapidev.yukkuriikouze.com/search/complex" 
-                    + "?page=" + fd.get("page")
-                    + "&show=" + fd.get("show")
-                    + (fd.get("search").length ? "&title=" + fd.get("search") : "")
-                    + (send_tags.length ? send_tags : "")
-                    + (fd.get("author").length ? "&author=" + fd.get("author") : "")
-                    + (fd.get("rate-min").length ? "&rate_min=" + fd.get("rate-min") : "")
-                    + (fd.get("rate-max").length ? "&rate_max=" + fd.get("rate-max") : "")
-                    + (fd_date.length >= 1 ? "&date_from=" + fd_date[0] : "")
-                    + (fd_date.length >= 2 ? "&date_to=" + fd_date[1] : "")
-                    
+                    + createRequestParameter()
+                 
     const xhr = new XMLHttpRequest()
 
     xhr.open('GET', req_url, true)
@@ -187,9 +202,39 @@ function searchGet(){
     xhr.send()
 }
 
+function createRequestParameter(){
+    const form = document.getElementById("search_area");
+    const fd = new FormData(form)
+
+    const separatorString = /\s+/;
+    const _tags = fd.get("tag").split(separatorString)
+    let send_tags = ""
+    for(const tag of _tags){
+        send_tags += "&tags=" + tag
+    }
+    
+    fd.append("show", params.get("show"))
+    fd.append("page", params.get("page"))
+
+    const fd_date = fd.get("date").length ? fd.get("date").split(" to "): []
+
+    const req_url = "?page=" + fd.get("page")
+                    + "&show=" + fd.get("show")
+                    + (fd.get("search").length ? "&title=" + fd.get("search") : "")
+                    + (send_tags.length ? send_tags : "")
+                    + (fd.get("author").length ? "&author=" + fd.get("author") : "")
+                    + (fd.get("rate-min").length ? "&rate_min=" + fd.get("rate-min") : "")
+                    + (fd.get("rate-max").length ? "&rate_max=" + fd.get("rate-max") : "")
+                    + (fd_date.length >= 1 ? "&date_from=" + fd_date[0] : "")
+                    + (fd_date.length >= 2 ? "&date_to=" + fd_date[1] : "")
+
+    return req_url
+}
+
 window.addEventListener('load', () => {
     searchBoxInit()
     searchGet()
+    searchNextPrevInit()
 })
 
 window.addEventListener("hashchange", () => {
