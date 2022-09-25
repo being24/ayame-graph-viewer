@@ -45,7 +45,7 @@ function searchListDraw(list){
         rate_value.textContent = element.rating
 
         const search_title = clone.querySelector(".search-element-title")
-        search_title.textContent = element.metatitle || element.fullname
+        search_title.textContent = element.metatitle || element.title || element.fullname
 
         const search_subtitle = clone.querySelector(".search-element-subtitle")
         search_subtitle.textContent = element.fullname
