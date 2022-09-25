@@ -220,7 +220,7 @@ function createRequestParameter(){
 
     const req_url = "?page=" + fd.get("page")
                     + "&show=" + fd.get("show")
-                    + (fd.get("search").length ? "&title=" + fd.get("search") : "")
+                    + (fd.get("search").length ? "&title=" + search_title_convert(fd.get("search")) : "")
                     + (send_tags.length ? send_tags : "")
                     + (fd.get("author").length ? "&author=" + fd.get("author") : "")
                     + (fd.get("rate-min").length ? "&rate_min=" + fd.get("rate-min") : "")
@@ -229,6 +229,10 @@ function createRequestParameter(){
                     + (fd_date.length >= 2 ? "&date_to=" + fd_date[1] : "")
 
     return req_url
+}
+
+function search_title_convert(title){
+    return title.replace(/^(https?:\/\/)?scp-jp.wikidot.com\//g, "")
 }
 
 window.addEventListener('load', () => {
