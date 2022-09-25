@@ -10,9 +10,9 @@ function search_api(){
     const req_url = "./search.html" 
                     + "?page=" + fd.get("page")
                     + "&show=" + fd.get("show")
-                    + (fd.get("search").length ? "&title=" + fd.get("search") : "")
-                    + (fd.get("tag").length ? "&tag=" + fd.get("tag") : "")
-                    + (fd.get("author").length ? "&author=" + fd.get("author").toLowerCase() : "")
+                    + (fd.get("search").length ? "&title=" + encodeURIComponent(fd.get("search")) : "")
+                    + (fd.get("tag").length ? "&tag=" + encodeURIComponent(fd.get("tag")) : "")
+                    + (fd.get("author").length ? "&author=" + encodeURIComponent(fd.get("author").toLowerCase()) : "")
                     + (fd.get("rate-min").length ? "&rate_min=" + fd.get("rate-min") : "")
                     + (fd.get("rate-max").length ? "&rate_max=" + fd.get("rate-max") : "")
                     + (fd_date.length >= 1 ? "&date_from=" + fd_date[0] : "")

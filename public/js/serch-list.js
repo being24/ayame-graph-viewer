@@ -210,7 +210,7 @@ function createRequestParameter(){
     const _tags = fd.get("tag").split(separatorString)
     let send_tags = ""
     for(const tag of _tags){
-        send_tags += "&tags=" + tag
+        send_tags += "&tags=" + encodeURIComponent(tag)
     }
     
     fd.append("show", params.get("show"))
@@ -220,9 +220,9 @@ function createRequestParameter(){
 
     const req_url = "?page=" + fd.get("page")
                     + "&show=" + fd.get("show")
-                    + (fd.get("search").length ? "&title=" + search_title_convert(fd.get("search")) : "")
+                    + (fd.get("search").length ? "&title=" + encodeURIComponent(search_title_convert(fd.get("search"))) : "")
                     + (send_tags.length ? send_tags : "")
-                    + (fd.get("author").length ? "&author=" + fd.get("author") : "")
+                    + (fd.get("author").length ? "&author=" + encodeURIComponent(fd.get("author")) : "")
                     + (fd.get("rate-min").length ? "&rate_min=" + fd.get("rate-min") : "")
                     + (fd.get("rate-max").length ? "&rate_max=" + fd.get("rate-max") : "")
                     + (fd_date.length >= 1 ? "&date_from=" + fd_date[0] : "")
