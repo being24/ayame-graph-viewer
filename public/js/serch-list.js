@@ -45,10 +45,10 @@ function searchListDraw(list){
         rate_value.textContent = element.rating
 
         const search_title = clone.querySelector(".search-element-title")
-        search_title.textContent = element.fullname
+        search_title.textContent = element.metatitle || element.fullname
 
-        const search_metatitle = clone.querySelector(".search-element-metatitle")
-        search_metatitle.textContent = element.metatitle
+        const search_subtitle = clone.querySelector(".search-element-subtitle")
+        search_subtitle.textContent = element.fullname
 
         const search_tag = clone.querySelector(".search-element-tags")
         if(element.tags){

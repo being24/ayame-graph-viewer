@@ -106,8 +106,8 @@ async function chartDraw(date_from=false,date_to=false){
 
 function infoDraw(info=false){
     if(info){
-        document.getElementById("info-title").textContent = info.fullname
-        document.getElementById("info-metatitle").textContent = info.metatitle
+        document.getElementById("info-title").textContent = info.metatitle || info.fullname
+        document.getElementById("info-subtitle").textContent = info.fullname
 
         const info_rate_circle = document.getElementById("rate-circle-percent")
         const rate_percent = parseInt((info.rating / 2000) * 100)

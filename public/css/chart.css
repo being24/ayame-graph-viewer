@@ -151,7 +151,7 @@ html{
     text-overflow: ellipsis;
 }
 
-.top-metatitle{
+.top-subtitle{
     margin-left: 30px;
     color: #b2b2b2;
     font-size: 0.6em;
@@ -255,7 +255,7 @@ html{
         width: 100%;
     }
 
-    .top-fullname, .top-metatitle{
+    .top-fullname, .top-subtitle{
         margin-right: 30px;
     }
 
