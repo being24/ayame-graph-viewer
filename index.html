@@ -1,132 +1,137 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <title>Ayame</title>
-        <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
-        <script type="text/javascript" src="public\js\analytics.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>Ayame</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 
-        <link type="text/css" rel="stylesheet" href="./public/css/header.css">
-        <link type="text/css" rel="stylesheet" href="./public/css/contents.css">
-        <link type="text/css" rel="stylesheet" href="./public/css/search.css">
-        <link type="text/css" rel="stylesheet" href="./public/css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script type="text/javascript" src="public\js\analytics.js"></script>
 
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    </head>
+    <link type="text/css" rel="stylesheet" href="./public/css/header.css">
+    <link type="text/css" rel="stylesheet" href="./public/css/contents.css">
+    <link type="text/css" rel="stylesheet" href="./public/css/search.css">
+    <link type="text/css" rel="stylesheet" href="./public/css/footer.css">
 
-    <body>
-        <div class="back-grid"></div>
-        <div class="header">
-            <div class="header-clip">
-                <div id="title-root-a" class="title-area">
-                    <div class="logo"></div>
-                    <div class="title">
-                        <h1>SCP DataBase</h1>
-                        <p>Secure. Contain. Protect</p>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body>
+    <div class="back-grid"></div>
+    <div class="header">
+        <div class="header-clip">
+            <div id="title-root-a" class="title-area">
+                <div class="logo"></div>
+                <div class="title">
+                    <h1>SCP DataBase</h1>
+                    <p>Secure. Contain. Protect</p>
+                </div>
+            </div>
+
+            <div class="opton-area">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="contents" class="serch-box">
+            <div id="search_contents">
+                <h2>Database access</h2>
+                <form action="" id="search_area">
+                    <div class="main-search">
+                        <div class="form-element">
+                            <div class="form-element-input">
+                                <div class="input-image-area">
+                                    <div class="input-image input-image-search"></div>
+                                </div>
+                                <input type="text" name="search" placeholder="fullname or metatitle" autocomplete="off"
+                                    class="form-input">
+                                <div class="input_underline"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="opton-area">
-
-                </div>
-            </div>
-        </div>
-
-        <div class="main">
-            <div id="contents" class="serch-box">
-                <div id="search_contents">
-                    <h2>Database access</h2>
-                    <form action="" id="search_area">
-                        <div class="main-search">
-                            <div class="form-element">
-                                <div class="form-element-input">
-                                    <div class="input-image-area">
-                                        <div class="input-image input-image-search"></div>
-                                    </div>
-                                    <input type="text" name="search" placeholder="fullname or metatitle" autocomplete="off" class="form-input">
-                                    <div class="input_underline"></div>
-                                </div>   
+                    <div id="expansion-search" class="sub-search">
+                        <h3>Advanced</h3>
+                        <div class="form-element">
+                            <div class="form-element-title">Tag</div>
+                            <div class="form-element-input">
+                                <div class="input-image-area">
+                                    <div class="input-image input-image-tag"></div>
+                                </div>
+                                <input type="text" name="tag" placeholder="tag" class="form-input">
+                                <div class="input_underline"></div>
                             </div>
                         </div>
-                        <div id="expansion-search" class="sub-search">
-                            <h3>Advanced</h3>
-                            <div class="form-element">
-                                <div class="form-element-title">Tag</div>
-                                <div class="form-element-input">
-                                    <div class="input-image-area">
-                                        <div class="input-image input-image-tag"></div>
-                                    </div>
-                                    <input type="text" name="tag" placeholder="tag" class="form-input">
-                                    <div class="input_underline"></div>
-                                </div>   
-                            </div>
-                            <div class="form-element">
-                                <div class="form-element-title">Author</div>
-                                <div class="form-element-input">
-                                    <div class="input-image-area">
-                                        <div class="input-image input-image-author"></div>
-                                    </div>
-                                    <input type="text" name="author" placeholder="author" class="form-input">
-                                    <div class="input_underline"></div>
-                                </div>   
-                            </div>
-                            <h3>Filter</h3>
-                            <div class="form-element">
-                                <div class="form-element-title">Rate</div>
-                                <div class="form-element-input">
-                                    <div class="input-image-area">
-                                        <div class="input-image input-image-rate"></div>
-                                    </div>
-                                    <div class="form-input form-input-flex">
-                                        <input type="number" id="input-range-min" name="rate-min" class="input-range" value="0" min="0" max="2000">
-                                        <multi-range></multi-range>
-                                        <div class="input-range-wight-min">to</div>
-                                        <input type="number" id="input-range-max" name="rate-max" class="input-range" value="2000" min="0" max="2000">
-                                    </div>
-                                    
-                                </div>  
-                            </div>
-                            <div class="form-element">
-                                <div class="form-element-title">Date</div>
-                                <div class="form-element-input">
-                                    <div class="input-image-area">
-                                        <div class="input-image input-image-calendar"></div>
-                                    </div>
-                                    <input type="text" id="flatpickr" name="date" class="form-input">
-                                    <div class="input_underline"></div>
-                                </div>  
+                        <div class="form-element">
+                            <div class="form-element-title">Author</div>
+                            <div class="form-element-input">
+                                <div class="input-image-area">
+                                    <div class="input-image input-image-author"></div>
+                                </div>
+                                <input type="text" name="author" placeholder="author" class="form-input">
+                                <div class="input_underline"></div>
                             </div>
                         </div>
-                        <div class="form-control">
-                            <div id="expansion-search-btn" class="sub-search-btn center-eff-btn">
-                                <div id="expansion-search-btn-title" class="sub-search-btn-img" title="Expansion"></div>
-                            </div>
-                            <div id="search-btn" class="search-btn center-eff-btn">Search</div>
-                        </div>
-                        
-                    </form>
-                </div>
-                <div class="contents-border top-left-border"></div>
-                <div class="contents-border top-right-border"></div>
-                <div class="contents-border bottom-left-border"></div>
-                <div class="contents-border bottom-right-border"></div>
-            </div>
-        </div>
+                        <h3>Filter</h3>
+                        <div class="form-element">
+                            <div class="form-element-title">Rate</div>
+                            <div class="form-element-input">
+                                <div class="input-image-area">
+                                    <div class="input-image input-image-rate"></div>
+                                </div>
+                                <div class="form-input form-input-flex">
+                                    <input type="number" id="input-range-min" name="rate-min" class="input-range"
+                                        value="0" min="0" max="2500">
+                                    <multi-range></multi-range>
+                                    <div class="input-range-wight-min">to</div>
+                                    <input type="number" id="input-range-max" name="rate-max" class="input-range"
+                                        value="2500" min="0" max="2500">
+                                </div>
 
-        <div id="footer">
-            <div class="license">
-                <p>foundation_logo_remade by ukwhatn CC BY-SA 3.0 2020</p>
+                            </div>
+                        </div>
+                        <div class="form-element">
+                            <div class="form-element-title">Date</div>
+                            <div class="form-element-input">
+                                <div class="input-image-area">
+                                    <div class="input-image input-image-calendar"></div>
+                                </div>
+                                <input type="text" id="flatpickr" name="date" class="form-input">
+                                <div class="input_underline"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-control">
+                        <div id="expansion-search-btn" class="sub-search-btn center-eff-btn">
+                            <div id="expansion-search-btn-title" class="sub-search-btn-img" title="Expansion"></div>
+                        </div>
+                        <div id="search-btn" class="search-btn center-eff-btn">Search</div>
+                    </div>
+
+                </form>
             </div>
+            <div class="contents-border top-left-border"></div>
+            <div class="contents-border top-right-border"></div>
+            <div class="contents-border bottom-left-border"></div>
+            <div class="contents-border bottom-right-border"></div>
         </div>
-        
-    </body>
-    <script src="./public/js/header.js"></script>
-    <script src="./public/js/serch.js"></script>
-    <script src="./public/js/multi-range.js"></script>
-    <script src="./public/js/flatpickr.js"></script>
+    </div>
+
+    <div id="footer">
+        <div class="license">
+            <p>foundation_logo_remade by ukwhatn CC BY-SA 3.0 2020</p>
+        </div>
+    </div>
+
+</body>
+<script src="./public/js/header.js"></script>
+<script src="./public/js/serch.js"></script>
+<script src="./public/js/multi-range.js"></script>
+<script src="./public/js/flatpickr.js"></script>
+
 </html>

@@ -1,8 +1,8 @@
 customElements.define("multi-range", class extends HTMLElement {
 	connectedCallback() {
 		if (this.shadowRoot) return
-		
-		this.attachShadow({mode: "open"}).innerHTML = `
+
+		this.attachShadow({ mode: "open" }).innerHTML = `
 			<style>
 				:host {
 					display: inline-block;
@@ -63,29 +63,29 @@ customElements.define("multi-range", class extends HTMLElement {
 			</style>
 
 			<div class="container">
-				<input id="back" type="range" min="-50" max="2000" value="0" />
-				<input id="front" type="range" min="-50" max="2000" value="2000" />
+				<input id="back" type="range" min="-50" max="2500" value="0" />
+				<input id="front" type="range" min="-50" max="2500" value="2500" />
 			</div>
 		`
-		
+
 		this._elems = {
 			back: this.shadowRoot.getElementById("back"),
 			front: this.shadowRoot.getElementById("front"),
 		}
-		
+
 		this._elems.back.addEventListener("input", () => {
-            const event = new CustomEvent('change')
-            this.dispatchEvent(event)
-            this._redraw() 
-        })
+			const event = new CustomEvent('change')
+			this.dispatchEvent(event)
+			this._redraw()
+		})
 		this._elems.front.addEventListener("input", () => {
-            const event = new CustomEvent('change')
-            this.dispatchEvent(event)
-            this._redraw()
-        })
+			const event = new CustomEvent('change')
+			this.dispatchEvent(event)
+			this._redraw()
+		})
 		this._redraw()
 	}
-	
+
 	_redraw() {
 		const { min, max, from, to } = this
 		const x = (from - min) / (max - min) * 100
@@ -93,11 +93,11 @@ customElements.define("multi-range", class extends HTMLElement {
 		this._elems.back.style.setProperty("--min", x + "%")
 		this._elems.back.style.setProperty("--max", y + "%")
 	}
-	
+
 	get min() {
 		return this._elems.back.min
 	}
-	
+
 	set min(value) {
 		const [min, max] = [+value || 0, this.max].sort((a, b) => a - b)
 		this._elems.back.min = min
@@ -106,11 +106,11 @@ customElements.define("multi-range", class extends HTMLElement {
 		this._elems.front.max = max
 		this._redraw()
 	}
-	
+
 	get max() {
 		return this._elems.back.max
 	}
-	
+
 	set max(value) {
 		const [min, max] = [this.min, +value || 0].sort((a, b) => a - b)
 		this._elems.back.min = min
@@ -119,33 +119,33 @@ customElements.define("multi-range", class extends HTMLElement {
 		this._elems.front.max = max
 		this._redraw()
 	}
-	
+
 	get from() {
 		return Math.min(this._elems.back.value, this._elems.front.value)
 	}
-	
+
 	set from(value) {
 		const [min, max] = [+value || 0, this.to].sort((a, b) => a - b)
 		this._elems.back.value = min
 		this._elems.front.value = max
 		this._redraw()
 	}
-	
+
 	get to() {
 		return Math.max(this._elems.back.value, this._elems.front.value)
 	}
-	
+
 	set to(value) {
 		const [min, max] = [this.from, +value || 0].sort((a, b) => a - b)
 		this._elems.back.value = min
 		this._elems.front.value = max
 		this._redraw()
 	}
-	
+
 	get value() {
 		return [this._elems.back.value, this._elems.front.value].sort((a, b) => a - b).join(",")
 	}
-	
+
 	set value(value) {
 		const [min, max] = value.split(",").slice(0, 2).sort((a, b) => a - b)
 		this._elems.back.value = min
